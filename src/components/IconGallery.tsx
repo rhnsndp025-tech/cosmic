@@ -162,9 +162,9 @@ export function IconGallery({ categories }: IconGalleryProps) {
       </div>
 
       {/* Results Count */}
-      <div className="text-sm text-muted-foreground">
+      {/* <div className="text-sm text-muted-foreground">
         Showing {filteredIcons.length} of {allIcons.length} icons
-      </div>
+      </div> */}
 
       {/* Icon Display */}
       {searchQuery || selectedCategory ? (
