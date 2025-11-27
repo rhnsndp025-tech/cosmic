@@ -8,9 +8,12 @@ import { IconGallery, IconCategory } from "@/components/IconGallery";
 const customIconCategories: IconCategory[] = [
   {
     name: "Navigation",
+    description: "Icons used for primary and secondary navigation within the application, guiding users through different sections and actions.",
     subcategories: [
       {
         name: "Primary Navigation",
+            description: "Icons used for primary and secondary navigation within the application, guiding users through different sections and actions.",
+
         icons: [
           { name: "equity-awards", path: "/icons/navigation/primary/awards-2.svg", category: ["Navigation", "Primary Navigation"] },
           { name: "dashboard", path: "/icons/navigation/primary/dashboard.svg", category: ["Navigation", "Primary Navigation"] },
@@ -21,6 +24,8 @@ const customIconCategories: IconCategory[] = [
       },
       {
         name: "Sub Navigation",
+    description: "Icons used for primary and secondary navigation within the application, guiding users through different sections and actions.",
+
         icons: [
           { name: "chevron-left", path: "/icons/navigation/sub/chevron-left.svg", category: ["Navigation", "Sub Navigation"] },
           { name: "chevron-right", path: "/icons/navigation/sub/chevron-right.svg", category: ["Navigation", "Sub Navigation"] },
@@ -34,6 +39,8 @@ const customIconCategories: IconCategory[] = [
   },
   {
     name: "Actions",
+    description: "Icons used for primary and secondary navigation within the application, guiding users through different sections and actions.",
+
     icons: [
       { name: "edit", path: "/icons/actions/edit.svg", category: ["Actions"] },
       { name: "delete", path: "/icons/actions/delete.svg", category: ["Actions"] },
@@ -45,6 +52,9 @@ const customIconCategories: IconCategory[] = [
   },
   {
     name: "Interface",
+    description: "Icons used for primary and secondary navigation within the application, guiding users through different sections and actions.",
+
+
     icons: [
       { name: "close", path: "/icons/interface/close.svg", category: ["Interface"] },
       { name: "menu", path: "/icons/interface/menu.svg", category: ["Interface"] },
@@ -56,6 +66,8 @@ const customIconCategories: IconCategory[] = [
   },
   {
     name: "Status",
+        description: "Icons used for primary and secondary navigation within the application, guiding users through different sections and actions.",
+    
     icons: [
       { name: "success", path: "/icons/status/success.svg", category: ["Status"] },
       { name: "error", path: "/icons/status/error.svg", category: ["Status"] },

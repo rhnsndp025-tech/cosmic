@@ -21,6 +21,7 @@ export interface IconCategory {
   name: string;
   subcategories?: IconCategory[];
   icons: IconItem[];
+  description?: string; // Added description property
 }
 
 interface IconGalleryProps {
@@ -69,12 +70,35 @@ export function IconGallery({ categories }: IconGalleryProps) {
     });
   }, [allIcons, searchQuery, selectedCategory]);
 
-  // Get all unique categories
+  // Get all unique categories (for filter buttons)
   const allCategories = useMemo(() => {
     const cats = new Set<string>();
     allIcons.forEach(icon => icon.category.forEach(cat => cats.add(cat)));
     return Array.from(cats).sort();
   }, [allIcons]);
+
+  // Find the description for the currently selected category
+  const selectedCategoryDescription = useMemo(() => {
+    if (!selectedCategory) return null;
+
+    // Recursive helper to find the category by name
+    const findCategoryDescription = (cats: IconCategory[], name: string): string | undefined => {
+      for (const cat of cats) {
+        if (cat.name === name && cat.description) {
+          return cat.description;
+        }
+        if (cat.subcategories) {
+          const subDescription = findCategoryDescription(cat.subcategories, name);
+          if (subDescription) return subDescription;
+        }
+      }
+      return undefined;
+    };
+
+    return findCategoryDescription(categories, selectedCategory);
+
+  }, [selectedCategory, categories]);
+
 
   const renderCategory = (category: IconCategory, level = 0) => {
     // Filter icons within this category based on search/selected category
@@ -90,7 +114,7 @@ export function IconGallery({ categories }: IconGalleryProps) {
     const hasVisibleSubcategories = category.subcategories?.some(subcat =>
       subcat.icons.some(icon => filteredIcons.some(fIcon => fIcon.name === icon.name))
     );
-    
+
     // Only render if there are visible icons or subcategories
     if (!hasVisibleIcons && !hasVisibleSubcategories && (searchQuery || selectedCategory)) {
       return null;
@@ -128,17 +152,17 @@ export function IconGallery({ categories }: IconGalleryProps) {
     <div className="space-y-6">
       {/* Search and Filter Section */}
       <div className="sticky top-0 bg-background z-10 pb-4 border-b border-border">
+        <div className="relative flex-1 mb-5">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+          <Input
+            type="text"
+            placeholder="Search icons by name or category..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="pl-10"
+          />
+        </div>
         <div className="flex flex-col md:flex-row gap-4">
-          <div className="relative flex-1">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            <Input
-              type="text"
-              placeholder="Search icons by name or category..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10"
-            />
-          </div>
           <div className="flex gap-2 flex-wrap">
             <Button
               variant={selectedCategory === null ? "default" : "outline"}
@@ -160,6 +184,13 @@ export function IconGallery({ categories }: IconGalleryProps) {
           </div>
         </div>
       </div>
+
+      {/* Category Description */}
+      {selectedCategory && selectedCategoryDescription && !searchQuery && (
+        <p className=" leading-relaxed mt-4 p-2 rounded-lg bg-secondary/20 border border-secondary/30">
+          {selectedCategoryDescription}
+        </p>
+      )}
 
       {/* Results Count */}
       {/* <div className="text-sm text-muted-foreground">
