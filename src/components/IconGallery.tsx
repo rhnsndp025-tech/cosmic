@@ -151,8 +151,8 @@ export function IconGallery({ categories }: IconGalleryProps) {
   return (
     <div className="space-y-6">
       {/* Search and Filter Section */}
-      <div className="sticky top-0 bg-background z-10 pb-4 border-b border-border">
-        <div className="relative flex-1 mb-5">
+      <div className="sticky top-0 bg-background z-10 pb-4 border p-5 border-border">
+        <div className="relative flex-1 mb-5 bg-green-100">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           <Input
             type="text"
@@ -164,13 +164,7 @@ export function IconGallery({ categories }: IconGalleryProps) {
         </div>
         <div className="flex flex-col md:flex-row gap-4">
           <div className="flex gap-2 flex-wrap">
-            <Button
-              variant={selectedCategory === null ? "default" : "outline"}
-              size="sm"
-              onClick={() => setSelectedCategory(null)}
-            >
-              All ({allIcons.length})
-            </Button>
+         
             {allCategories.map(cat => (
               <Button
                 key={cat}
@@ -181,6 +175,13 @@ export function IconGallery({ categories }: IconGalleryProps) {
                 {cat}
               </Button>
             ))}
+               <Button
+              variant={selectedCategory === null ? "default" : "outline"}
+              size="sm"
+              onClick={() => setSelectedCategory(null)}
+            >
+              All ({allIcons.length})
+            </Button>
           </div>
         </div>
       </div>

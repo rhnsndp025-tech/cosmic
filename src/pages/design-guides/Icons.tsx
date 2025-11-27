@@ -67,7 +67,7 @@ const customIconCategories: IconCategory[] = [
   {
     name: "Status",
         description: "Icons used for primary and secondary navigation within the application, guiding users through different sections and actions.",
-    
+
     icons: [
       { name: "success", path: "/icons/status/success.svg", category: ["Status"] },
       { name: "error", path: "/icons/status/error.svg", category: ["Status"] },
@@ -113,7 +113,48 @@ const Icons = () => {
           icon library that maintains consistency across all components.
         </p>
 
-                    <IconGallery categories={customIconCategories} />
+
+ {/* --- Start New Tabs Here --- */}
+        <Tabs defaultValue="overview" className="mt-8">
+          <TabsList className="grid w-full grid-cols-4">
+            <TabsTrigger value="overview">Overview</TabsTrigger>
+            <TabsTrigger value="types">Types</TabsTrigger>
+            <TabsTrigger value="usage">Usage</TabsTrigger>
+            <TabsTrigger value="accessibility">Accessibility</TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="overview">
+
+                <p className="text-lg leading-relaxed mt-10 mb-10">
+          Icons are a crucial part of visual communication. ink uses a carefully curated
+          icon library that maintains consistency across all components.
+        </p>
+            <p className="text-muted-foreground mt-4">
+
+                                <IconGallery categories={customIconCategories} />
+            </p>
+
+
+          </TabsContent>
+          <TabsContent value="types">
+            <p className="text-muted-foreground mt-4">
+              We primarily use Lucide icons for their extensive library and consistent design language. For specialized needs, we also maintain a custom SVG icon set.
+            </p>
+          </TabsContent>
+          <TabsContent value="usage">
+            <p className="text-muted-foreground mt-4">
+              Icons should be used purposefully to enhance comprehension, highlight actions, and improve navigation. Avoid decorative overuse that might clutter the interface.
+            </p>
+          </TabsContent>
+          <TabsContent value="accessibility">
+            <p className="text-muted-foreground mt-4">
+              Ensure all icons provide adequate contrast and, when conveying meaning, include appropriate ARIA labels or alternative text for screen readers. Decorative icons should be hidden from accessibility trees.
+            </p>
+          </TabsContent>
+        </Tabs>
+        {/* --- End New Tabs Here --- */}
+
+
 
 
         
