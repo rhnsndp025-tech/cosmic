@@ -12,9 +12,9 @@ import { ChevronDown } from "lucide-react";
 
 export interface IconItem {
   name: string;
-  path: string;
+  path: string; // This is the original path
   category: string[];
-  updatedPath?: string;
+  updatedPath?: string; // This will now be populated
 }
 
 export interface IconCategory {
@@ -27,15 +27,32 @@ interface IconGalleryProps {
   categories: IconCategory[];
 }
 
+// Helper function to derive the updated path
+const getUpdatedIconPath = (originalPath: string): string => {
+  const lastDotIndex = originalPath.lastIndexOf('.');
+  if (lastDotIndex === -1) {
+    // If no extension, just append _updated
+    return `${originalPath}_updated`;
+  }
+  const fileName = originalPath.substring(0, lastDotIndex);
+  const extension = originalPath.substring(lastDotIndex);
+  return `${fileName}_updated${extension}`;
+};
+
+
 export function IconGallery({ categories }: IconGalleryProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
-  // Flatten all icons for search and filtering
+  // Flatten all icons for search and filtering, and add the updatedPath
   const allIcons = useMemo(() => {
     const flatten = (cats: IconCategory[]): IconItem[] => {
       return cats.flatMap(cat => [
-        ...cat.icons,
+        ...cat.icons.map(icon => ({
+          ...icon,
+          // Populate updatedPath using the helper function
+          updatedPath: getUpdatedIconPath(icon.path)
+        })),
         ...(cat.subcategories ? flatten(cat.subcategories) : [])
       ]);
     };
@@ -46,7 +63,7 @@ export function IconGallery({ categories }: IconGalleryProps) {
   const filteredIcons = useMemo(() => {
     return allIcons.filter(icon => {
       const matchesSearch = icon.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                           icon.category.some(cat => cat.toLowerCase().includes(searchQuery.toLowerCase()));
+        icon.category.some(cat => cat.toLowerCase().includes(searchQuery.toLowerCase()));
       const matchesCategory = !selectedCategory || icon.category.includes(selectedCategory);
       return matchesSearch && matchesCategory;
     });
@@ -60,10 +77,27 @@ export function IconGallery({ categories }: IconGalleryProps) {
   }, [allIcons]);
 
   const renderCategory = (category: IconCategory, level = 0) => {
-    const hasIcons = category.icons.length > 0;
-    const hasSubcategories = category.subcategories && category.subcategories.length > 0;
+    // Filter icons within this category based on search/selected category
+    const categoryIcons = category.icons.filter(icon =>
+      filteredIcons.some(filteredIcon => filteredIcon.name === icon.name && filteredIcon.path === icon.path)
+    ).map(icon => ({
+      ...icon,
+      // Ensure updatedPath is present when mapping within categories
+      updatedPath: getUpdatedIconPath(icon.path)
+    }));
 
-    if (!hasIcons && !hasSubcategories) return null;
+    const hasVisibleIcons = categoryIcons.length > 0;
+    const hasVisibleSubcategories = category.subcategories?.some(subcat =>
+      subcat.icons.some(icon => filteredIcons.some(fIcon => fIcon.name === icon.name))
+    );
+    
+    // Only render if there are visible icons or subcategories
+    if (!hasVisibleIcons && !hasVisibleSubcategories && (searchQuery || selectedCategory)) {
+      return null;
+    }
+
+    if (!category.icons.length && (!category.subcategories || category.subcategories.length === 0) && !searchQuery && !selectedCategory) return null;
+
 
     return (
       <Collapsible key={category.name} defaultOpen={level === 0} className="mb-4">
@@ -76,17 +110,15 @@ export function IconGallery({ categories }: IconGalleryProps) {
             ({category.icons.length} icons)
           </span>
         </CollapsibleTrigger>
-        
         <CollapsibleContent className={`mt-4 ${level > 0 ? 'ml-6' : ''}`}>
-          {hasIcons && (
+          {hasVisibleIcons && ( // Render categoryIcons
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-6">
-              {category.icons.map((icon, idx) => (
+              {categoryIcons.map((icon, idx) => (
                 <IconCard key={idx} {...icon} />
               ))}
             </div>
           )}
-          
-          {hasSubcategories && category.subcategories!.map(subcat => renderCategory(subcat, level + 1))}
+          {category.subcategories && category.subcategories.map(subcat => renderCategory(subcat, level + 1))}
         </CollapsibleContent>
       </Collapsible>
     );
@@ -107,7 +139,6 @@ export function IconGallery({ categories }: IconGalleryProps) {
               className="pl-10"
             />
           </div>
-          
           <div className="flex gap-2 flex-wrap">
             <Button
               variant={selectedCategory === null ? "default" : "outline"}

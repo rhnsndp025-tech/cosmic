@@ -12,10 +12,10 @@ const customIconCategories: IconCategory[] = [
       {
         name: "Primary Navigation",
         icons: [
-          { name: "arrow-left", path: "/icons/navigation/primary/arrow-left.svg", category: ["Navigation", "Primary Navigation"] },
-          { name: "arrow-right", path: "/icons/navigation/primary/arrow-right.svg", category: ["Navigation", "Primary Navigation"] },
-          { name: "arrow-up", path: "/icons/navigation/primary/arrow-up.svg", category: ["Navigation", "Primary Navigation"] },
-          { name: "arrow-down", path: "/icons/navigation/primary/arrow-down.svg", category: ["Navigation", "Primary Navigation"] },
+          { name: "equity-awards", path: "/icons/navigation/primary/awards-2.svg", category: ["Navigation", "Primary Navigation"] },
+          { name: "dashboard", path: "/icons/navigation/primary/dashboard.svg", category: ["Navigation", "Primary Navigation"] },
+          { name: "ownership", path: "/icons/navigation/primary/ownership.svg", category: ["Navigation", "Primary Navigation"] },
+          { name: "shareholders", path: "/icons/navigation/primary/shareholders.svg", category: ["Navigation", "Primary Navigation"] },
         ],
         subcategories: [],
       },
@@ -100,6 +100,9 @@ const Icons = () => {
           Icons are a crucial part of visual communication. ink uses a carefully curated
           icon library that maintains consistency across all components.
         </p>
+
+                    <IconGallery categories={customIconCategories} />
+
 
         <h2 className="text-3xl font-playfair font-semibold mt-12 mb-6">
           Icon Library
@@ -227,7 +230,7 @@ const Icons = () => {
               </h4>
               <p className="text-muted-foreground mb-2">
                 Each icon can have an updated version. Place updated SVG files in the corresponding
-                <code className="mx-1 px-2 py-1 bg-code text-code-foreground rounded text-sm">public/icons/updated/</code>
+                <code className="mx-1 px-2 py-1 bg-code text-code-foreground rounded text-sm">public/icons/[category]/</code>
                 directory to see them side-by-side with the original.
               </p>
               <p className="text-muted-foreground text-sm">
@@ -235,7 +238,6 @@ const Icons = () => {
               </p>
             </div>
 
-            <IconGallery categories={customIconCategories} />
           </section>
         </TabsContent>
       </Tabs>

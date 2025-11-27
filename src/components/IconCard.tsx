@@ -22,19 +22,19 @@ export function IconCard({ name, path, category, updatedPath }: IconCardProps) {
   };
 
   return (
-    <Card className="p-4 hover:shadow-md transition-shadow">
+    <Card >
       <div className="space-y-4">
         {/* Icon Preview */}
         <div className="flex gap-4 items-center justify-center min-h-[80px]">
-          <div className="flex-1 flex items-center justify-center bg-muted rounded-lg p-4">
-            <img src={path} alt={name} className="w-12 h-12 object-contain" />
-            <span className="sr-only">Current icon</span>
+          <div className="flex-1 flex items-center justify-center  rounded-lg p-4">
+            <img src={path} alt={name}  />
+            {/* <span className="sr-only">Current icon</span> */}
           </div>
           {updatedPath && (
             <>
-              <div className="text-muted-foreground">→</div>
-              <div className="flex-1 flex items-center justify-center bg-accent/20 rounded-lg p-4 border border-accent">
-                <img src={updatedPath} alt={`${name} updated`} className="w-12 h-12 object-contain" />
+              <div >→</div>
+              <div className="flex-1 flex items-center justify-center  p-4 ">
+                <img src={updatedPath} alt={`${name} updated`} className=" object-contain" />
                 <span className="sr-only">Updated icon</span>
               </div>
             </>
@@ -44,8 +44,8 @@ export function IconCard({ name, path, category, updatedPath }: IconCardProps) {
         {/* Icon Info */}
         <div className="space-y-2">
           <div className="flex items-start justify-between gap-2">
-            <h3 className="font-medium text-sm truncate" title={name}>{name}</h3>
-            <Button
+            {/* <h3 className="font-medium text-sm truncate" title={name}>{name}</h3> */}
+            {/* <Button
               variant="ghost"
               size="sm"
               onClick={copyPath}
@@ -57,16 +57,16 @@ export function IconCard({ name, path, category, updatedPath }: IconCardProps) {
               ) : (
                 <Copy className="h-3 w-3" />
               )}
-            </Button>
+            </Button> */}
           </div>
           
-          <div className="flex flex-wrap gap-1">
+          {/* <div className="flex flex-wrap gap-1">
             {category.map((cat, idx) => (
               <Badge key={idx} variant="secondary" className="text-xs">
                 {cat}
               </Badge>
             ))}
-          </div>
+          </div> */}
 
           {!updatedPath && (
             <div className="pt-2 border-t border-border">
