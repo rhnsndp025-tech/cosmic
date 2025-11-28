@@ -5,7 +5,7 @@ import { Separator } from "@/components/ui/separator"; // Add this import
 import Index from "./importComponents";
 
 
-const Components = () => {
+const ComponentSpecific = () => {
   return (
     <ArticleLayout
       title="Components"
@@ -119,4 +119,4 @@ const Components_new = () => {
   );
 };
 
-export default Components;
+export default ComponentSpecific;

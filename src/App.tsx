@@ -46,6 +46,7 @@ import Navigation from "./pages/categories/Navigation";
 import Spreadsheet from "./pages/categories/Spreadsheet";
 import Table from "./pages/categories/Table";
 import Typography from "./pages/categories/Typography";
+import ComponentSpecific from "./pages/getting-started/ComponentsSpecific";
 
 const queryClient = new QueryClient();
 
@@ -68,6 +69,13 @@ const App = () => (
                   
                   {/* Getting Started */}
                   <Route path="/getting-started/components" element={<Components />} />
+                  {/* <Route path="/getting-started/components/:component?" element={<ComponentSpecific />} /> */}
+
+                  <Route
+  path="/getting-started/components/:component?"
+  element={<ComponentSpecific />}
+/>
+
                   <Route path="/getting-started/contribute" element={<Contribute />} />
                   <Route path="/getting-started/support" element={<Support />} />
                   
