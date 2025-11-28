@@ -110,7 +110,15 @@ const Icons = () => {
       title="Icons"
       description="Guidelines for using icons consistently across your applications."
     >
-      <section className="space-y-6">
+
+      
+  <div className="mt-4 border-rounded">
+    <ReactBeforeSliderComponent
+      firstImage={FIRST_IMAGE}
+      secondImage={SECOND_IMAGE}
+    />
+  </div>
+      <section className="space-y-6 mt-10" >
         <p className="text-lg leading-relaxed">
           Icons are a crucial part of visual communication. ink uses a carefully curated
           icon library that maintains consistency across all components.
@@ -145,13 +153,13 @@ const Icons = () => {
 {/* <img src="/assets/grid-demo.png" style={{ width: '100%', height: '100%', objectFit: 'contain' }} /> */}
               We primarily use Lucide icons for their extensive library and consistent design language. For specialized needs, we also maintain a custom SVG icon set.
             </p>
-
+{/* 
   <div className="mt-4">
     <ReactBeforeSliderComponent
       firstImage={FIRST_IMAGE}
       secondImage={SECOND_IMAGE}
     />
-  </div>
+  </div> */}
 
 
           </TabsContent>
