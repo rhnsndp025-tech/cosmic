@@ -3,8 +3,11 @@ import { CodeBlock } from "@/components/CodeBlock";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Heart, Home, Settings, User, Search } from "lucide-react";
 import { IconGallery, IconCategory } from "@/components/IconGallery";
+import ReactBeforeSliderComponent from 'react-before-after-slider-component';
+import 'react-before-after-slider-component/dist/build.css';
 
-
+const FIRST_IMAGE = { imageUrl: "/assets/grid-demo-after.png" };
+const SECOND_IMAGE = { imageUrl: "/assets/grid-demo.png" };
 const customIconCategories: IconCategory[] = [
   {
     name: "Navigation",
@@ -138,8 +141,19 @@ const Icons = () => {
           </TabsContent>
           <TabsContent value="types">
             <p className="text-muted-foreground mt-4">
+
+{/* <img src="/assets/grid-demo.png" style={{ width: '100%', height: '100%', objectFit: 'contain' }} /> */}
               We primarily use Lucide icons for their extensive library and consistent design language. For specialized needs, we also maintain a custom SVG icon set.
             </p>
+
+  <div className="mt-4">
+    <ReactBeforeSliderComponent
+      firstImage={FIRST_IMAGE}
+      secondImage={SECOND_IMAGE}
+    />
+  </div>
+
+
           </TabsContent>
           <TabsContent value="usage">
             <p className="text-muted-foreground mt-4">
