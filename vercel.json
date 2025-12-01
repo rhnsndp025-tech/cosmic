@@ -1,9 +1,5 @@
-    {
-      "version": 2,
-      "routes": [
-        {
-          "src": "/api/data.json",
-          "dest": "/api/data.json"
-        }
-      ]
-    }
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ]
+}
