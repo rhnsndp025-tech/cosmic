@@ -80,7 +80,7 @@ const Colors = () => {
 
             <p>Cosmic’s color system is built on the following principles:</p>
 
-            <div className="flex items-center gap-4 p-4 border border-gray-300 rounded-xl shadow-sm bg-white  border-radius-12 border-1 mt-10">
+            <div className="flex items-center gap-4 p-4 border border-gray-300 rounded-xl shadow-sm bg-white  border-radius-12 border-1 mt-10  bg-[#FDF8F5]">
               <img
                 src="/assets/accessibility.png"
                 className="w-32 rounded-lg"
@@ -95,7 +95,7 @@ const Colors = () => {
               </p>
             </div>
 
-            <div className="flex items-center gap-4 p-4 border border-gray-300 rounded-xl shadow-sm bg-white  border-radius-12 border-1 mt-5">
+            <div className="flex items-center gap-4 p-4 border border-gray-300 rounded-xl shadow-sm bg-white  border-radius-12 border-1 mt-5 bg-[#FDF8F5]">
 
               <p className="text-base font-medium text-gray-800 leading-snug">
                 <h3 className="text-xl font-semibold mb-2">
@@ -108,7 +108,7 @@ const Colors = () => {
 
             </div>
 
-            <div className="flex items-center gap-4 p-4 border border-gray-300 rounded-xl shadow-sm bg-white  border-radius-12 border-1 mt-5">
+            <div className="flex items-center gap-4 p-4 border border-gray-300 rounded-xl shadow-sm bg-white  border-radius-12 border-1 mt-5  bg-[#FDF8F5]">
               <img src="/assets/consistency.png" className="w-32 rounded-lg" />
 
               <p className="text-base font-medium text-gray-800 leading-snug">
@@ -119,20 +119,30 @@ const Colors = () => {
               </p>
             </div>
 
-            
-
-
-              <div className="flex items-center gap-4 p-4 border border-gray-300 rounded-xl shadow-sm bg-white  border-radius-12 border-1 mt-10">
-             
+                        <div className="flex items-center gap-4 p-4 border border-gray-300 rounded-xl shadow-sm bg-white  border-radius-12 border-1 mt-5  bg-[#FDF8F5]">
 
               <p className="text-base font-medium text-gray-800 leading-snug">
                 <h3 className="text-xl font-semibold mb-2">
-                  Emotional alignment
+                  Consistency across surfaces
+                </h3>
+                A color used for an action or status behaves the similarly everywhere.
+              </p>
+                            <img src="/assets/consistency.png" className="w-32 rounded-lg" />
+
+            </div>
+
+
+              <div className="flex items-center gap-4 p-4 border border-gray-300 rounded-xl shadow-sm bg-white  border-radius-12 border-1 mt-10  bg-[#FDF8F5]">
+             
+                                          <img src="/assets/scalable.png" className="w-32 rounded-lg" />
+
+              <p className="text-base font-medium text-gray-800 leading-snug">
+                <h3 className="text-xl font-semibold mb-2">
+                  Scalable 
                 </h3>
                 Colors must meet WCAG contrast requirements and be usable by
                 people with visual or cognitive impairments.
               </p>
-                                          <img src="/assets/workflow.png" className="w-32 rounded-lg" />
 
             </div>
 
