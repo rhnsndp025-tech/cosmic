@@ -83,7 +83,7 @@ const Colors = () => {
             <div className="flex items-center gap-4 p-4 border border-gray-300 rounded-xl shadow-sm bg-white  border-radius-12 border-1 mt-10  bg-[#FDF8F5]">
               <img
                 src="/assets/accessibility.png"
-                className="w-32 rounded-lg"
+                className="w-[32%]  rounded-lg"
               />
 
               <p className="text-base font-medium text-gray-800 leading-snug">
@@ -104,12 +104,12 @@ const Colors = () => {
                 Each color has a defined purpose so users can intuitively
                 understand visual meaning.
               </p>
-                            <img src="/assets/hierarchy.png" className="w-32 rounded-lg" />
+                            <img src="/assets/hierarchy.png" className="w-[32%] rounded-lg" />
 
             </div>
 
             <div className="flex items-center gap-4 p-4 border border-gray-300 rounded-xl shadow-sm bg-white  border-radius-12 border-1 mt-5  bg-[#FDF8F5]">
-              <img src="/assets/consistency.png" className="w-32 rounded-lg" />
+              <img src="/assets/consistency.png" className="w-[32%]  rounded-lg" />
 
               <p className="text-base font-medium text-gray-800 leading-snug">
                 <h3 className="text-xl font-semibold mb-2">
@@ -127,14 +127,14 @@ const Colors = () => {
                 </h3>
                 A color used for an action or status behaves the similarly everywhere.
               </p>
-                            <img src="/assets/consistency.png" className="w-32 rounded-lg" />
+                            <img src="/assets/workflow.png" className="w-[32%]  rounded-lg" />
 
             </div>
 
 
               <div className="flex items-center gap-4 p-4 border border-gray-300 rounded-xl shadow-sm bg-white  border-radius-12 border-1 mt-10  bg-[#FDF8F5]">
              
-                                          <img src="/assets/scalable.png" className="w-32 rounded-lg" />
+                                          <img src="/assets/scalable.png" className="w-[32%] rounded-lg" />
 
               <p className="text-base font-medium text-gray-800 leading-snug">
                 <h3 className="text-xl font-semibold mb-2">
@@ -147,35 +147,7 @@ const Colors = () => {
             </div>
 
 
-            <ol className="list-decimal list-inside ml-4 space-y-2 mt-10">
-              <li>
-                <strong>Accessibility first</strong>
-                <br />
-              </li>
-              <li>
-                <strong>Functional hierarchy</strong>
-                <br />
-                Each color has a defined purpose so users can intuitively
-                understand visual meaning.
-              </li>
-              <li>
-                <strong>Consistency across surfaces</strong>
-                <br />A color used for an action or status behaves the same way
-                everywhere.
-              </li>
-              <li>
-                <strong>Emotional alignment</strong>
-                <br />
-                Colors should reflect Cosmic’s personality: security, future,
-                and innovation.
-              </li>
-              <li>
-                <strong>Scalable and systematic</strong>
-                <br />
-                Colors are token-based and expandable without breaking visual
-                harmony.
-              </li>
-            </ol>
+     
           </TabsContent>
           <TabsContent value="types">
             <p className="text-muted-foreground mt-4">
