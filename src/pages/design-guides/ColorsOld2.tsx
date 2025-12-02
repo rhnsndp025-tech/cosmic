@@ -1,167 +1,8 @@
 import { ArticleLayout } from "@/components/ArticleLayout";
-import { useState } from "react";
 import purple from "@/assets/purple.jpg";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-function ThemeRenderer({ theme }) {
-  return (
-    <div className="space-y-12 mt-10">
-      {theme.sections.map((section, index) => {
-        switch (section.type) {
-          case "palette":
-            return (
-              <div key={index}>
-                <h3 className="text-2xl font-semibold mb-4">{section.title}</h3>
-                {section.description && (
-                  <p className="text-muted-foreground mb-4">
-                    {section.description}
-                  </p>
-                )}
-
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                  {section.colors.map((color, i) => (
-                    <div key={i} className="space-y-2">
-                      <div
-                        className="h-20 rounded-lg"
-                        style={{ backgroundColor: color.hex }}
-                      ></div>
-                      <p className="text-sm font-medium">{color.label}</p>
-                      <p className="text-xs text-muted-foreground">
-                        {color.hex}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            );
-
-          case "paragraph":
-            return (
-              <p key={index} className="text-muted-foreground">
-                {section.content}
-              </p>
-            );
-
-          case "image":
-            return (
-              <div key={index} className="space-y-2">
-                <img src={section.src} className="rounded-lg shadow-sm" />
-                {section.caption && (
-                  <p className="text-xs text-muted-foreground">
-                    {section.caption}
-                  </p>
-                )}
-              </div>
-            );
-
-          default:
-            return null;
-        }
-      })}
-    </div>
-  );
-}
-
-const themes = {
-  themes: [
-    {
-      id: "light",
-      name: "Light",
-      previewBg: "#ffffff",
-      previewBorder: "#e5e7eb",
-      sections: [
-        {
-          type: "palette",
-          title: "Primary Colors",
-          description:
-            "Primary colors drive brand recognition and highlight key actions.",
-          colors: [
-            { label: "Brand-100", hex: "#633EA5" },
-            { label: "Brand-200", hex: "#8A5BDC" },
-            { label: "Brand-300", hex: "#AE9BCF" },
-            { label: "Brand-400", hex: "#F2EDFB" },
-          ],
-        },
-        {
-          type: "paragraph",
-          content:
-            "Primary color usage is consistent across brand surfaces to maintain hierarchy.",
-        },
-        {
-          type: "palette",
-          title: "Secondary Colors",
-          colors: [
-            { label: "Accent-100", hex: "#FFB100" },
-            { label: "Accent-200", hex: "#FFCE5E" },
-            { label: "Accent-300", hex: "#FDF8EE" },
-          ],
-        },
-      ],
-    },
-
-    {
-      id: "dark",
-      name: "Dark",
-      previewBg: "#000000",
-      previewBorder: "#1f2937",
-      sections: [
-        {
-          type: "paragraph",
-          content:
-            "Dark mode optimizes low-light legibility and reduces visual strain.",
-        },
-        {
-          type: "palette",
-          title: "Primary Colors",
-          colors: [
-            { label: "Brand-100", hex: "#4A3A85" },
-            { label: "Brand-200", hex: "#6E5AC0" },
-          ],
-        },
-      ],
-    },
-
-    {
-      id: "red",
-      name: "Red",
-      previewBg: "#ffefef",
-      previewBorder: "#dc2626",
-      sections: [
-        {
-          type: "palette",
-          title: "Alert Colors",
-          colors: [
-            { label: "Alert-100", hex: "#EF4444" },
-            { label: "Alert-200", hex: "#F87171" },
-          ],
-        },
-      ],
-    },
-
-    {
-      id: "custom",
-      name: "Custom",
-      previewBg: "#f9fafb",
-      previewBorder: "#d1d5db",
-      sections: [
-        {
-          type: "paragraph",
-          content: "You can customize this theme however you want.",
-        },
-        {
-          type: "image",
-          src: "/assets/theme-preview.png",
-          caption: "Example theme usage",
-        },
-      ],
-    },
-  ],
-};
-
 const Colors = () => {
-  const [active, setActive] = useState("light");
-  const activeTheme = themes.themes.find((t) => t.id === active);
-
   return (
     <ArticleLayout
       title="Colors"
@@ -300,7 +141,7 @@ const Colors = () => {
               </p>
             </div>
           </TabsContent>
-          {/* <TabsContent value="types">
+          <TabsContent value="types">
             <p className="text-muted-foreground mt-4">
               Use color to communicate hierarchy, meaning, emotion, and brand
               identity across Cosmic experiences. This page defines how colors
@@ -502,41 +343,8 @@ const Colors = () => {
 
    
             </div>
-          </TabsContent> */}
-          <TabsContent value="types">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 my-8">
-              {themes.themes.map((theme) => (
-                <button
-                  key={theme.id}
-                  onClick={() => setActive(theme.id)}
-                  className={`p-4 rounded-2xl border transition-all text-center ${
-                    active === theme.id
-                      ? "border-4 border-primary shadow-md"
-                      : "border border-gray-300 hover:border-gray-400"
-                  }`}
-                  style={{ backgroundColor: theme.previewBg }}
-                >
-                  <div
-                    className="h-24 rounded-xl mb-3 w-full"
-                    style={{ border: `2px solid ${theme.previewBorder}` }}
-                  ></div>
-                  <p className="font-medium">{theme.name}</p>
-                </button>
-              ))}
-
-
-
-            </div>
-
-
-              {activeTheme && (
-  <div className="mt-12">
-    <ThemeRenderer theme={activeTheme} />
-  </div>
-)}
-
           </TabsContent>
-
+        
           <TabsContent value="accessibility">
             <p className="text-muted-foreground mt-4">
               Ensure all icons provide adequate contrast and, when conveying
