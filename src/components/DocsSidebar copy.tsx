@@ -1,4 +1,5 @@
 import { NavLink } from "@/components/NavLink";
+import { ChevronRight, FileText, Palette, Code2, Wrench, BookOpen, Layers } from "lucide-react";
 import {
   Sidebar,
   SidebarContent,
@@ -8,16 +9,10 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarTrigger,
 } from "@/components/ui/sidebar";
-import {
-  ChevronRight,
-  FileText,
-  Palette,
-  Code2,
-  Wrench,
-  BookOpen,
-  Layers,
-} from "lucide-react";
+import { useState } from "react";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
 const sections = [
   {
@@ -27,6 +22,9 @@ const sections = [
       { title: "Colors", url: "/design-guides/colors" },
       { title: "Components", url: "/getting-started/components" },
       { title: "Icons", url: "/design-guides/icons" },
+   
+      // { title: "How to Contribute", url: "/getting-started/contribute" },
+      // { title: "Support & Feedback", url: "/getting-started/support" },
     ],
   },
   {
@@ -82,41 +80,63 @@ const sections = [
 ];
 
 export function DocsSidebar() {
+  const [openSections, setOpenSections] = useState<Record<string, boolean>>({
+    "Getting Started": true,
+  });
+
+  const toggleSection = (title: string) => {
+    setOpenSections((prev) => ({ ...prev, [title]: !prev[title] }));
+  };
+
   return (
     <Sidebar className="border-r border-sidebar-border">
       <div className="p-6 border-b border-sidebar-border">
         <h1 className="text-2xl font-playfair font-bold">Cosmic</h1>
-        <p className="text-sm text-muted-foreground mt-1 font-inter">
-          Design System
-        </p>
+        <p className="text-sm text-muted-foreground mt-1 font-inter">Design System</p>
       </div>
 
       <SidebarContent>
         {sections.map((section) => (
-          <SidebarGroup key={section.title}>
-            <SidebarGroupLabel className="flex items-center gap-2 font-inter font-medium">
-              <section.icon className="h-4 w-4" />
-              {section.title}
-            </SidebarGroupLabel>
-
-            <SidebarGroupContent>
-              <SidebarMenu>
-                {section.items.map((item) => (
-                  <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton asChild>
-                      <NavLink
-                        to={item.url}
-                        className="font-inter text-sm hover:bg-sidebar-accent transition-colors"
-                        activeClassName="bg-sidebar-accent text-sidebar-accent-foreground font-medium"
-                      >
-                        <span>{item.title}</span>
-                      </NavLink>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                ))}
-              </SidebarMenu>
-            </SidebarGroupContent>
-          </SidebarGroup>
+          <Collapsible
+            key={section.title}
+            open={openSections[section.title]}
+            onOpenChange={() => toggleSection(section.title)}
+          >
+            <SidebarGroup>
+              <CollapsibleTrigger className="w-full">
+                <SidebarGroupLabel className="flex items-center justify-between cursor-pointer hover:text-foreground transition-colors">
+                  <div className="flex items-center gap-2">
+                    <section.icon className="h-4 w-4" />
+                    <span className="font-inter font-medium">{section.title}</span>
+                  </div>
+                  <ChevronRight
+                    className={`h-4 w-4 transition-transform ${
+                      openSections[section.title] ? "rotate-90" : ""
+                    }`}
+                  />
+                </SidebarGroupLabel>
+              </CollapsibleTrigger>
+              <CollapsibleContent>
+                <SidebarGroupContent>
+                  <SidebarMenu>
+                    {section.items.map((item) => (
+                      <SidebarMenuItem key={item.title}>
+                        <SidebarMenuButton asChild>
+                          <NavLink
+                            to={item.url}
+                            className="font-inter text-sm hover:bg-sidebar-accent transition-colors"
+                            activeClassName="bg-sidebar-accent text-sidebar-accent-foreground font-medium"
+                          >
+                            <span>{item.title}</span>
+                          </NavLink>
+                        </SidebarMenuButton>
+                      </SidebarMenuItem>
+                    ))}
+                  </SidebarMenu>
+                </SidebarGroupContent>
+              </CollapsibleContent>
+            </SidebarGroup>
+          </Collapsible>
         ))}
       </SidebarContent>
     </Sidebar>

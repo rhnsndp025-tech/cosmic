@@ -4,7 +4,7 @@ import { CodeBlock } from "@/components/CodeBlock";
 const Contribute = () => {
   return (
     <ArticleLayout
-      title="How to Contribute to ink"
+      title="How to Contribute to Cosmic"
       description="Join our community and help make ink better for everyone."
     >
       <section className="space-y-6">

@@ -39,9 +39,8 @@ const Colors = () => {
         {/* --- Start New Tabs Here --- */}
         <Tabs defaultValue="overview" className="mt-8">
           <TabsList className="grid w-full grid-cols-4">
-            <TabsTrigger value="overview">Science behind colors</TabsTrigger>
+            <TabsTrigger value="overview">Color theory </TabsTrigger>
             <TabsTrigger value="types">Themes</TabsTrigger>
-            <TabsTrigger value="usage">Usage</TabsTrigger>
             <TabsTrigger value="accessibility">Accessibility</TabsTrigger>
           </TabsList>
 
@@ -96,7 +95,6 @@ const Colors = () => {
             </div>
 
             <div className="flex items-center gap-4 p-4 border border-gray-300 rounded-xl shadow-sm bg-white  border-radius-12 border-1 mt-5 bg-[#FDF8F5]">
-
               <p className="text-base font-medium text-gray-800 leading-snug">
                 <h3 className="text-xl font-semibold mb-2">
                   Functional hierarchy
@@ -104,50 +102,44 @@ const Colors = () => {
                 Each color has a defined purpose so users can intuitively
                 understand visual meaning.
               </p>
-                            <img src="/assets/hierarchy.png" className="w-[32%] rounded-lg" />
-
+              <img src="/assets/hierarchy.png" className="w-[32%] rounded-lg" />
             </div>
 
             <div className="flex items-center gap-4 p-4 border border-gray-300 rounded-xl shadow-sm bg-white  border-radius-12 border-1 mt-5  bg-[#FDF8F5]">
-              <img src="/assets/consistency.png" className="w-[32%]  rounded-lg" />
+              <img
+                src="/assets/consistency.png"
+                className="w-[32%]  rounded-lg"
+              />
 
               <p className="text-base font-medium text-gray-800 leading-snug">
                 <h3 className="text-xl font-semibold mb-2">
                   Consistency across surfaces
                 </h3>
-                A color used for an action or status behaves the similarly everywhere.
+                A color used for an action or status behaves the similarly
+                everywhere.
               </p>
             </div>
 
-                        <div className="flex items-center gap-4 p-4 border border-gray-300 rounded-xl shadow-sm bg-white  border-radius-12 border-1 mt-5  bg-[#FDF8F5]">
-
+            <div className="flex items-center gap-4 p-4 border border-gray-300 rounded-xl shadow-sm bg-white  border-radius-12 border-1 mt-5  bg-[#FDF8F5]">
               <p className="text-base font-medium text-gray-800 leading-snug">
                 <h3 className="text-xl font-semibold mb-2">
                   Consistency across surfaces
                 </h3>
-                A color used for an action or status behaves the similarly everywhere.
+                A color used for an action or status behaves the similarly
+                everywhere.
               </p>
-                            <img src="/assets/workflow.png" className="w-[32%]  rounded-lg" />
-
+              <img src="/assets/workflow.png" className="w-[32%]  rounded-lg" />
             </div>
 
-
-              <div className="flex items-center gap-4 p-4 border border-gray-300 rounded-xl shadow-sm bg-white  border-radius-12 border-1 mt-10  bg-[#FDF8F5]">
-             
-                                          <img src="/assets/scalable.png" className="w-[32%] rounded-lg" />
+            <div className="flex items-center gap-4 p-4 border border-gray-300 rounded-xl shadow-sm bg-white  border-radius-12 border-1 mt-10  bg-[#FDF8F5]">
+              <img src="/assets/scalable.png" className="w-[32%] rounded-lg" />
 
               <p className="text-base font-medium text-gray-800 leading-snug">
-                <h3 className="text-xl font-semibold mb-2">
-                  Scalable 
-                </h3>
+                <h3 className="text-xl font-semibold mb-2">Scalable</h3>
                 Colors must meet WCAG contrast requirements and be usable by
                 people with visual or cognitive impairments.
               </p>
-
             </div>
-
-
-     
           </TabsContent>
           <TabsContent value="types">
             <p className="text-muted-foreground mt-4">
@@ -170,95 +162,189 @@ const Colors = () => {
 
             <div className="space-y-6">
               <div>
-                <h3 className="text-xl font-playfair font-semibold mb-4">
-                  Surface Colors
+                <h3 className="text-2xl font-playfair font-semibold mb-4 mt-10">
+                  Primary Colors  
                 </h3>
 
-                <h4 className="text-lg font-playfair font-semibold mb-4">
-                  {" "}
-                  Background color variants{" "}
-                </h4>
+           
+        
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  <div className="space-y-2">
-                    <div className="h-20 bg-background border border-border rounded-lg"></div>
-                    <p className="text-sm font-semibold">Background</p>
-                    <p className="text-xs text-muted-foreground">Default</p>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-5">
+                    <div className="space-y-2">
+                      <div className="h-20 bg-primary rounded-lg bg-[#633EA5]"></div>
+                      <p className="text-sm font-semibold">Brand-100</p>
+                      <p className="text-xs text-muted-foreground">
+                        633EA5
+                      </p>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="h-20 bg-accent rounded-lg bg-[#8A5BDC]"></div>
+                      <p className="text-sm font-semibold">Brand-200</p>
+                      <p className="text-xs text-muted-foreground">
+                        8A5BDC
+                      </p>
+                    </div>
+
+                      <div className="space-y-2">
+                      <div className="h-20 bg-accent rounded-lg bg-[#AE9BCF]"></div>
+                      <p className="text-sm font-semibold">Brand-300</p>
+                      <p className="text-xs text-muted-foreground">
+                        AE9BCF
+                      </p>
+                    </div>
+
+                     <div className="space-y-2">
+                      <div className="h-20 bg-accent rounded-lg bg-[#F2EDFB]"></div>
+                      <p className="text-sm font-semibold">Brand-400</p>
+                      <p className="text-xs text-muted-foreground">
+                        F2EDFB
+                      </p>
+                    </div>
+
+                   
+               
                   </div>
-                  <div className="space-y-2">
-                    <div className="h-20 bg-card border border-border rounded-lg"></div>
-                    <p className="text-sm font-semibold">Brand</p>
-                    <p className="text-xs text-muted-foreground">Brand</p>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="h-20 bg-muted rounded-lg"></div>
-                    <p className="text-sm font-semibold">Secondary</p>
-                    <p className="text-xs text-muted-foreground">
-                      Subtle backgrounds
-                    </p>
-                  </div>
-                </div>
 
                 <p className="mt-10">
-                  By leveraging the symbolism of purple, the design system
-                  reinforces a commitment to progress, resilience, and
-                  cutting-edge excellence, resonating strongly in environments
-                  where security and visionary thinking are paramount.
+                 <i> In Cosmic, the primary color is intentionally reserved to
+                  drive clarity, hierarchy, and instant recognition of Qapita.</i>
                 </p>
-              </div>
 
-              <div>
-                <h3 className="text-xl font-playfair font-semibold mb-4">
-                  Brand Colors
-                </h3>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                  <div className="space-y-2">
-                    <div className="h-20 bg-primary rounded-lg"></div>
-                    <p className="text-sm font-semibold">Primary</p>
-                    <p className="text-xs text-muted-foreground">
-                      Primary actions
-                    </p>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="h-20 bg-accent rounded-lg"></div>
-                    <p className="text-sm font-semibold">Accent</p>
-                    <p className="text-xs text-muted-foreground">
-                      Highlights & links
-                    </p>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="h-20 bg-secondary rounded-lg"></div>
-                    <p className="text-sm font-semibold">Secondary</p>
-                    <p className="text-xs text-muted-foreground">
-                      Secondary actions
-                    </p>
+
+                        <div className="mt-10">
+                  <h3 className="text-2xl font-playfair font-semibold mb-4">
+                    Primary color usage across mediums
+                  </h3>
+                  <hr />
+
+
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-5">
+                    <div className="space-y-2">
+                      <div className="h-20 bg-primary rounded-lg bg-[#633EA5]"></div>
+                      <p className="text-sm font-semibold">Logo & Brand Mark</p>
+                      <p className="text-xs text-muted-foreground">
+                        Primary actions
+                      </p>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="h-20 bg-accent rounded-lg bg-[#140035]"></div>
+                      <p className="text-sm font-semibold">Marketing Website</p>
+                      <p className="text-xs text-muted-foreground">
+                        Highlights & links
+                      </p>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="h-20 bg-secondary rounded-lg bg-[#140035]"></div>
+                      <p className="text-sm font-semibold">Product Portal</p>
+                      <p className="text-xs text-muted-foreground">
+                        Secondary actions
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div>
-                <h3 className="text-xl font-playfair font-semibold mb-4">
-                  Feedback Colors
-                </h3>
-                <div className="grid grid-cols-2 md:grid-cols-1 gap-4">
-                  <div className="space-y-2">
-                    <div className="h-20 bg-destructive rounded-lg"></div>
-                    <p className="text-sm font-semibold">Destructive</p>
-                    <p className="text-xs text-muted-foreground">
-                      Errors & destructive actions
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </TabsContent>
-          <TabsContent value="usage">
-            <p className="text-muted-foreground mt-4">
-              Icons should be used purposefully to enhance comprehension,
+   <p className="text-muted-foreground mt-4">
+              Written about Tertiary Colors, Icons should be used purposefully to enhance comprehension,
               highlight actions, and improve navigation. Avoid decorative
               overuse that might clutter the interface.
             </p>
+
+                <div className="mt-10">
+                  <h3 className="text-2xl font-playfair font-semibold mb-4">
+                    Seconday (Accent) Usage
+                  </h3>
+                  <hr />
+
+
+   <p className="text-muted-foreground mt-4">
+              Written about Tertiary Colors, Icons should be used purposefully to enhance comprehension,
+              highlight actions, and improve navigation. Avoid decorative
+              overuse that might clutter the interface.
+            </p>
+
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-5">
+                    <div className="space-y-2">
+                      <div className="h-20 bg-primary rounded-lg bg-[#FFB100]"></div>
+                      <p className="text-sm font-semibold">Logo & Brand Mark</p>
+                      <p className="text-xs text-muted-foreground">
+                        Primary actions
+                      </p>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="h-20 bg-accent rounded-lg bg-[#FFCE5E]"></div>
+                      <p className="text-sm font-semibold">Marketing Website</p>
+                      <p className="text-xs text-muted-foreground">
+                        Highlights & links
+                      </p>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="h-20 bg-secondary rounded-lg bg-[#FD7E9]"></div>
+                      <p className="text-sm font-semibold">Product Portal</p>
+                      <p className="text-xs text-muted-foreground">
+                        Secondary actions
+                      </p>
+                    </div>
+                     <div className="space-y-2">
+                      <div className="h-20 bg-secondary rounded-lg bg-[#FDF8EE]"></div>
+                      <p className="text-sm font-semibold">Product Portal</p>
+                      <p className="text-xs text-muted-foreground">
+                        Secondary actions
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+
+        <div className="mt-10">
+                  <h3 className="text-2xl font-playfair font-semibold mb-4">
+                    Tertiary Colors
+                  </h3>
+                  <hr />
+
+
+   <p className="text-muted-foreground mt-4">
+              Written about Tertiary Colors, Icons should be used purposefully to enhance comprehension,
+              highlight actions, and improve navigation. Avoid decorative
+              overuse that might clutter the interface.
+            </p>
+
+
+
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-5">
+                    <div className="space-y-2">
+                      <div className="h-20 bg-primary rounded-lg bg-[#633EA5]"></div>
+                      <p className="text-sm font-semibold">Logo & Brand Mark</p>
+                      <p className="text-xs text-muted-foreground">
+                        Primary actions
+                      </p>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="h-20 bg-accent rounded-lg bg-[#140035]"></div>
+                      <p className="text-sm font-semibold">Marketing Website</p>
+                      <p className="text-xs text-muted-foreground">
+                        Highlights & links
+                      </p>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="h-20 bg-secondary rounded-lg bg-[#140035]"></div>
+                      <p className="text-sm font-semibold">Product Portal</p>
+                      <p className="text-xs text-muted-foreground">
+                        Secondary actions
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                </div>
+
+   
+            </div>
           </TabsContent>
+        
           <TabsContent value="accessibility">
             <p className="text-muted-foreground mt-4">
               Ensure all icons provide adequate contrast and, when conveying
