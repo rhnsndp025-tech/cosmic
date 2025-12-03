@@ -6,6 +6,297 @@ import { IconGallery, IconCategory } from "@/components/IconGallery";
 import ReactBeforeSliderComponent from 'react-before-after-slider-component';
 import 'react-before-after-slider-component/dist/build.css';
 
+
+// const nav = {
+//   "Left Navigation": [
+//     {
+//       "name": "Home",
+//       "old": "/icons-sriman/left-nav/home-old.svg",
+//       "new": "/icons-sriman/left-nav/home-new.svg"
+//     },
+//     {
+//       "name": "Settings",
+//       "old": "/icons-sriman/left-nav/settings-old.svg",
+//       "new": "/icons-sriman/left-nav/settings-new.svg"
+//     }
+//   ],
+//   "Global Navigation": [
+//     {
+//       "name": "Search",
+//       "old": "/icons/global-nav/search-old.svg",
+//       "new": "/icons/global-nav/search-new.svg"
+//     }
+//   ],
+//   "Action Icons": [
+//     {
+//       "name": "Add",
+//       "old": "/icons/actions/add-old.svg",
+//       "new": "/icons/actions/add-new.svg"
+//     }
+//   ],
+//   "System Icons": [
+//     {
+//       "name": "Alert",
+//       "old": "/icons/system/alert-old.svg",
+//       "new": "/icons/system/alert-new.svg"
+//     }
+//   ],
+//   "Badges Icons": [
+//     {
+//       "name": "Verified",
+//       "old": "/icons/badges/verified-old.svg",
+//       "new": "/icons/badges/verified-new.svg"
+//     }
+//   ],
+//   "Confirmation indicator Icons": [
+//     {
+//       "name": "Success",
+//       "old": "/icons/confirm/success-old.svg",
+//       "new": "/icons/confirm/success-new.svg"
+//     }
+//   ]
+// }
+
+
+const nav = {
+  "Left Navigation-Primary Level": [
+    {
+      "name": "Quick Actions",
+      "old": "/icons-sriman/left-nav/quick actions-old.svg",
+      "new": "/icons-sriman/left-nav/quick actions-new.svg"
+    },
+    {
+      "name": "Dashboard",
+      "old": "/icons-sriman/left-nav/dashboard-old.svg",
+      "new": "/icons-sriman/left-nav/dashboard-new.svg"
+    },
+    {
+      "name": "Ownership",
+      "old": "/icons-sriman/left-nav/ownership-old.svg",
+      "new": "/icons-sriman/left-nav/ownership-new.svg"
+    },
+    {
+      "name": "Equity Awards",
+      "old": "/icons-sriman/left-nav/equity Awards-old.svg",
+      "new": "/icons-sriman/left-nav/dequity Awards-new.svg"
+    },
+    {
+      "name": "Stakeholders",
+      "old": "/icons-sriman/left-nav/stakeholders-old.svg",
+      "new": "/icons-sriman/left-nav/stakeholders-new.svg"
+    },
+    {
+      "name": "Reports",
+      "old": "/icons-sriman/left-nav/reports-old.svg",
+      "new": "/icons-sriman/left-nav/reports-new.svg"
+    },
+    {
+      "name": "Documents",
+      "old": "/icons-sriman/left-nav/documents-old.svg",
+      "new": "/icons-sriman/left-nav/documents-new.svg"
+    },
+    {
+      "name": "Board Consents",
+      "old": "/icons-sriman/left-nav/board consents-old.svg",
+      "new": "/icons-sriman/left-nav/board consents-new.svg"
+    },
+    {
+      "name": "Employee Engagement",
+      "old": "/icons-sriman/left-nav/employee engagement-old.svg",
+      "new": "/icons-sriman/left-nav/employee engagement-new.svg"
+    },
+    {
+      "name": "Settings",
+      "old": "/icons-sriman/left-nav/settings-old.svg",
+      "new": "/icons-sriman/left-nav/settings-new.svg"
+    }
+  ],
+  "Left Navigation-Sub Level": [
+    {
+      "name": "Captable",
+      "old": "/icons/global-nav/captable-old.svg",
+      "new": "/icons/global-nav/captable-new.svg"
+    },
+    {
+      "name": "Scenarios",
+      "old": "/icons-sriman/left-nav/scenarios-old.svg",
+      "new": "/icons-sriman/left-nav/scenarios-new.svg"
+    },
+    {
+      "name": "Transactions",
+      "old": "/icons-sriman/left-nav/transactions-old.svg",
+      "new": "/icons-sriman/left-nav/transactions-new.svg"
+    },
+    {
+      "name": "Security Classes",
+      "old": "/icons-sriman/left-nav/security classes-old.svg",
+      "new": "/icons-sriman/left-nav/security classes-new.svg"
+    },
+    {
+      "name": "Pools",
+      "old": "/icons-sriman/left-nav/pools-old.svg",
+      "new": "/icons-sriman/left-nav/pools-new.svg"
+    },
+    {
+      "name": "Plans",
+      "old": "/icons-sriman/left-nav/plans-old.svg",
+      "new": "/icons-sriman/left-nav/plans-new.svg"
+    },
+    {
+      "name": "Grants",
+      "old": "/icons-sriman/left-nav/grants-old.svg",
+      "new": "/icons-sriman/left-nav/grants-new.svg"
+    },
+    {
+      "name": "Exercises",
+      "old": "/icons-sriman/left-nav/exercises-old.svg",
+      "new": "/icons-sriman/left-nav/exercises-new.svg"
+    },
+    {
+      "name": "Surrenders",
+      "old": "/icons-sriman/left-nav/surrenders-old.svg",
+      "new": "/icons-sriman/left-nav/surrenders-new.svg"
+    },
+    {
+      "name": "Financial Reports",
+      "old": "/icons-sriman/left-nav/financial reports-old.svg",
+      "new": "/icons-sriman/left-nav/transactions-new.svg"
+    },
+    {
+      "name": "Stakeholder Details",
+      "old": "/icons-sriman/left-nav/stakeholder details-old.svg",
+      "new": "/icons-sriman/left-nav/stakeholder details-new.svg"
+    },
+    {
+      "name": "Verification",
+      "old": "/icons-sriman/left-nav/verification-old.svg",
+      "new": "/icons-sriman/left-nav/verification-new.svg"
+    },
+    {
+      "name": "Town Hall",
+      "old": "/icons-sriman/left-nav/dashboard-old.svg",
+      "new": "/icons-sriman/left-nav/town hall-new.svg"
+    },
+    {
+      "name": "Equity Slips",
+      "old": "/icons-sriman/left-nav/equity slips-old.svg",
+      "new": "/icons-sriman/left-nav/equity slips-new.svg"
+    },
+    {
+      "name": "Manage Users",
+      "old": "/icons-sriman/left-nav/manage users-old.svg",
+      "new": "/icons-sriman/left-nav/manage users-new.svg"
+    },
+    {
+      "name": "Manage Roles",
+      "old": "/icons-sriman/left-nav/manage roles-old.svg",
+      "new": "/icons-sriman/left-nav/manage roles-new.svg"
+    },
+    {
+      "name": "Configurations",
+      "old": "/icons-sriman/left-nav/configurations-old.svg",
+      "new": "/icons-sriman/left-nav/configurations-new.svg"
+    },
+    {
+      "name": "Templates",
+      "old": "/icons-sriman/left-nav/templates-old.svg",
+      "new": "/icons-sriman/left-nav/templates-new.svg"
+    },
+    {
+      "name": "Bulk Upload",
+      "old": "/icons-sriman/left-nav/bulk upload-old.svg",
+      "new": "/icons-sriman/left-nav/bulk upload-new.svg"
+    },
+    {
+      "name": "Valuations",
+      "old": "/icons-sriman/left-nav/valuations-old.svg",
+      "new": "/icons-sriman/left-nav/valuations-new.svg"
+    },
+  ],
+  "Global Navigation-Top Bar": [
+    {
+      "name": "Qapita Marketplace",
+      "old": "/icons/global-nav/qapita marketplace-old.svg",
+      "new": "/icons/global-nav/qapita marketplace-new.svg"
+    },
+    {
+      "name": "Other Offerings",
+      "old": "/icons-sriman/left-nav/other offerings-old.svg",
+      "new": "/icons-sriman/left-nav/other offerings-new.svg"
+    },
+    {
+      "name": "Startup Deals",
+      "old": "/icons-sriman/left-nav/startup deals-old.svg",
+      "new": "/icons-sriman/left-nav/startup deals-new.svg"
+    },
+    {
+      "name": "Notification",
+      "old": "/icons-sriman/left-nav/notification-old.svg",
+      "new": "/icons-sriman/left-nav/notification-new.svg"
+    },
+    {
+      "name": "My Tasks",
+      "old": "/icons-sriman/left-nav/my tasks-old.svg",
+      "new": "/icons-sriman/left-nav/my tasks-new.svg"
+    },
+    {
+      "name": "User",
+      "old": "/icons-sriman/left-nav/user-old.svg",
+      "new": "/icons-sriman/left-nav/user-new.svg"
+    }
+  ]
+  }
+
+  
+
+const IconBeforeAfter = ({ name, oldUrl, newUrl }) => {
+  return (
+    <div className="grid grid-cols-3 gap-6 items-center py-3 border-b">
+      <p className="text-sm text-gray-700">{name}</p>
+
+      <div className="flex justify-center">
+        <img src={oldUrl} alt={`${name} old icon`} className="h-6 opacity-70" />
+      </div>
+
+      <div className="flex justify-center">
+        <img src={newUrl} alt={`${name} new icon`} className="h-6" />
+      </div>
+    </div>
+  );
+};
+
+ function IconsSection() {
+  return (
+    <section className="space-y-10 mt-10">
+      <p className="text-lg leading-relaxed">
+        Icons are a crucial part of visual communication. ink uses a carefully curated
+        icon library that maintains consistency across all components.
+      </p>
+
+      {Object.entries(nav).map(([category, icons]) => (
+        <div key={category} className="space-y-4">
+          <h2 className="text-xl font-semibold">{category}</h2>
+
+          <div className="grid grid-cols-3 text-sm font-medium text-gray-500 pb-2 border-b">
+            <div></div>
+            <p className="text-center">Current Icons</p>
+            <p className="text-center">Proposed Icons</p>
+          </div>
+
+          {icons.map((icon) => (
+            <IconBeforeAfter
+              key={icon.name}
+              name={icon.name}
+              oldUrl={icon.old}
+              newUrl={icon.new}
+            />
+          ))}
+        </div>
+      ))}
+    </section>
+  );
+}
+
 const FIRST_IMAGE = { imageUrl: "/assets/grid-demo-after.png" };
 const SECOND_IMAGE = { imageUrl: "/assets/grid-demo.png" };
 const customIconCategories: IconCategory[] = [
@@ -110,7 +401,7 @@ const Icons = () => {
       title="Icons"
       description="Guidelines for using icons consistently across your applications."
     >
-
+<IconsSection />
       
   <div className="mt-4 border-rounded">
     <ReactBeforeSliderComponent
