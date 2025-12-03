@@ -77,8 +77,8 @@ const nav = {
     },
     {
       "name": "Equity Awards",
-      "old": "/icons-sriman/left-nav/equity Awards-old.svg",
-      "new": "/icons-sriman/left-nav/dequity Awards-new.svg"
+      "old": "/icons-sriman/left-nav/equity-awards-old.svg",
+      "new": "/icons-sriman/left-nav/equity-awards-new.svg"
     },
     {
       "name": "Stakeholders",
@@ -97,8 +97,8 @@ const nav = {
     },
     {
       "name": "Board Consents",
-      "old": "/icons-sriman/left-nav/board consents-old.svg",
-      "new": "/icons-sriman/left-nav/board consents-new.svg"
+      "old": "/icons-sriman/left-nav/board-consents-old.svg",
+      "new": "/icons-sriman/left-nav/board-consents-new.svg"
     },
     {
       "name": "Employee Engagement",
@@ -114,8 +114,8 @@ const nav = {
   "Left Navigation-Sub Level": [
     {
       "name": "Captable",
-      "old": "/icons/global-nav/captable-old.svg",
-      "new": "/icons/global-nav/captable-new.svg"
+      "old": "/icons-sriman/left-nav/captable-old.svg",
+      "new": "/icons-sriman/left-nav/captable-new.svg"
     },
     {
       "name": "Scenarios",
@@ -129,8 +129,8 @@ const nav = {
     },
     {
       "name": "Security Classes",
-      "old": "/icons-sriman/left-nav/security classes-old.svg",
-      "new": "/icons-sriman/left-nav/security classes-new.svg"
+      "old": "/icons-sriman/left-nav/security-classes-old.svg",
+      "new": "/icons-sriman/left-nav/security-classes-new.svg"
     },
     {
       "name": "Pools",
@@ -159,13 +159,13 @@ const nav = {
     },
     {
       "name": "Financial Reports",
-      "old": "/icons-sriman/left-nav/financial reports-old.svg",
-      "new": "/icons-sriman/left-nav/transactions-new.svg"
+      "old": "/icons-sriman/left-nav/financial-reports-old.svg",
+      "new": "/icons-sriman/left-nav/financial-reports-new.svg"
     },
     {
       "name": "Stakeholder Details",
-      "old": "/icons-sriman/left-nav/stakeholder details-old.svg",
-      "new": "/icons-sriman/left-nav/stakeholder details-new.svg"
+      "old": "/icons-sriman/left-nav/stakeholder-old.svg",
+      "new": "/icons-sriman/left-nav/stakeholder-new.svg"
     },
     {
       "name": "Verification",
@@ -174,23 +174,23 @@ const nav = {
     },
     {
       "name": "Town Hall",
-      "old": "/icons-sriman/left-nav/dashboard-old.svg",
-      "new": "/icons-sriman/left-nav/town hall-new.svg"
+      "old": "/icons-sriman/left-nav/town-hall-old.svg",
+      "new": "/icons-sriman/left-nav/town-hall-new.svg"
     },
     {
       "name": "Equity Slips",
-      "old": "/icons-sriman/left-nav/equity slips-old.svg",
-      "new": "/icons-sriman/left-nav/equity slips-new.svg"
+      "old": "/icons-sriman/left-nav/equity-slips-old.svg",
+      "new": "/icons-sriman/left-nav/equity-slips-new.svg"
     },
     {
       "name": "Manage Users",
-      "old": "/icons-sriman/left-nav/manage users-old.svg",
-      "new": "/icons-sriman/left-nav/manage users-new.svg"
+      "old": "/icons-sriman/left-nav/manage-users-old.svg",
+      "new": "/icons-sriman/left-nav/manage-users-new.svg"
     },
     {
       "name": "Manage Roles",
-      "old": "/icons-sriman/left-nav/manage roles-old.svg",
-      "new": "/icons-sriman/left-nav/manage roles-new.svg"
+      "old": "/icons-sriman/left-nav/manage-roles-old.svg",
+      "new": "/icons-sriman/left-nav/manage-roles-new.svg"
     },
     {
       "name": "Configurations",
@@ -204,8 +204,8 @@ const nav = {
     },
     {
       "name": "Bulk Upload",
-      "old": "/icons-sriman/left-nav/bulk upload-old.svg",
-      "new": "/icons-sriman/left-nav/bulk upload-new.svg"
+      "old": "/icons-sriman/left-nav/bulk-upload-old.svg",
+      "new": "/icons-sriman/left-nav/bulk-upload-new.svg"
     },
     {
       "name": "Valuations",
@@ -216,18 +216,18 @@ const nav = {
   "Global Navigation-Top Bar": [
     {
       "name": "Qapita Marketplace",
-      "old": "/icons/global-nav/qapita marketplace-old.svg",
-      "new": "/icons/global-nav/qapita marketplace-new.svg"
+      "old": "/icons-sriman/left-nav/qapita-marketplace-old.svg",
+      "new": "/icons-sriman/left-nav/qapita-marketplace-new.svg"
     },
     {
       "name": "Other Offerings",
-      "old": "/icons-sriman/left-nav/other offerings-old.svg",
-      "new": "/icons-sriman/left-nav/other offerings-new.svg"
+      "old": "/icons-sriman/left-nav/other-offerings-old.svg",
+      "new": "/icons-sriman/left-nav/other-offerings-new.svg"
     },
     {
       "name": "Startup Deals",
-      "old": "/icons-sriman/left-nav/startup deals-old.svg",
-      "new": "/icons-sriman/left-nav/startup deals-new.svg"
+      "old": "/icons-sriman/left-nav/startup-deals-old.svg",
+      "new": "/icons-sriman/left-nav/startup-deals-new.svg"
     },
     {
       "name": "Notification",
@@ -236,16 +236,15 @@ const nav = {
     },
     {
       "name": "My Tasks",
-      "old": "/icons-sriman/left-nav/my tasks-old.svg",
-      "new": "/icons-sriman/left-nav/my tasks-new.svg"
+      "old": "/icons-sriman/left-nav/my-tasks-old.svg",
+      "new": "/icons-sriman/left-nav/my-tasks-new.svg"
     },
     {
       "name": "User",
       "old": "/icons-sriman/left-nav/user-old.svg",
       "new": "/icons-sriman/left-nav/user-new.svg"
     }
-  ]
-  }
+  ]}
 
   
 
@@ -401,7 +400,6 @@ const Icons = () => {
       title="Icons"
       description="Guidelines for using icons consistently across your applications."
     >
-<IconsSection />
       
   <div className="mt-4 border-rounded">
     <ReactBeforeSliderComponent
@@ -432,8 +430,9 @@ const Icons = () => {
           icon library that maintains consistency across all components.
         </p>
             <p className="text-muted-foreground mt-4">
+ <IconsSection />
 
-                                <IconGallery categories={customIconCategories} />
+                                {/* <IconGallery categories={customIconCategories} /> */}
             </p>
 
 
