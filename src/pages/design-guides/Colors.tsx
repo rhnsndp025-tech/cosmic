@@ -121,6 +121,49 @@ const themes = {
       ],
     },
 
+        {
+      id: "default",
+      name: "Default Palette",
+      previewBg: "#1a1a1a",
+      previewBorder: "#2e2e2e",
+      sections: [
+        {
+          type: "palette",
+          title: "Primary",
+          colors: [
+            { label: "Brand-Blue-100", hex: "#009DDB" },
+            { label: "Brand-Acc-Blue-100", hex: "#037DAE" },
+ 
+            { label: "Brand-Blue-200", hex: "#E5F8FF" },
+            { label: "Brand-Blue-300", hex: "#FAFEFF" }
+          ]
+        },
+ 
+        {
+          type: "palette",
+          title: "Secondary",
+          colors: [
+            { label: "Metal-100", hex: "#425563" },
+            { label: "Sapphire-100", hex: "#446CA9" },
+            { label: "Coastal-100", hex: "#6BA4B8" },
+ 
+            { label: "Metal-200", hex: "#33424C" },
+            { label: "Metal-300", hex: "#E3E9ED" }
+          ]
+        },
+ 
+        {
+          type: "palette",
+          title: "Tertiary",
+          colors: [
+            { label: "Teal-100", hex: "#018189" },
+            { label: "Turquoise-100", hex: "#64CCC9" },
+            { label: "Tangerine-100", hex: "#F7A800" }
+          ]
+        }
+      ]
+    },
+
     {
       id: "red",
       name: "Red",
