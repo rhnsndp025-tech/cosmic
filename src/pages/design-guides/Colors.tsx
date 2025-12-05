@@ -72,7 +72,7 @@ const themes = {
       sections: [
         {
           type: "palette",
-          // title: "Brand Palette (Primary)",
+          title: "Primary Palette",
           description:
             "The Brand Palette represents Qapita's core identity. It is used for primary interactions and for drawing the highest level of attention.",
           colors: [
