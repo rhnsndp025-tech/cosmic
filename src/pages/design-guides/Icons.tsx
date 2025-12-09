@@ -458,11 +458,426 @@ const Icons = () => {
               Icons should be used purposefully to enhance comprehension, highlight actions, and improve navigation. Avoid decorative overuse that might clutter the interface.
             </p>
           </TabsContent>
-          <TabsContent value="accessibility">
-            <p className="text-muted-foreground mt-4">
-              Ensure all icons provide adequate contrast and, when conveying meaning, include appropriate ARIA labels or alternative text for screen readers. Decorative icons should be hidden from accessibility trees.
-            </p>
-          </TabsContent>
+         <TabsContent value="accessibility">
+  <p className="text-muted-foreground mt-4">
+    Ensure all icons provide adequate contrast and, when conveying meaning,
+    include appropriate ARIA labels or alternative text for screen readers.
+    Decorative icons should be hidden from accessibility trees.
+  </p>
+
+  <div className="space-y-6  mt-6">
+
+    {/* ------------------------------------------ */}
+    {/* ICON LIBRARY & PRINCIPLES */}
+    {/* ------------------------------------------ */}
+
+    <h2 className="text-lg font-semibold">Icon Library</h2>
+
+    <h3 className="text-base font-medium">What are the principles guiding the creation?</h3>
+    <p>Current and Proposed: Figma File Reference.</p>
+
+    <h3 className="text-base font-medium">Usage Rules</h3>
+    <ul className="list-disc pl-6 space-y-1">
+      <li>Stroke vs filled style and when to use each (primary vs secondary actions, states).</li>
+      <li>Corner treatment (rounded vs sharp), joins, caps, and consistent visual weight.</li>
+      <li>Use of negative space and appropriate simplification (avoid tiny details).</li>
+      <li>States when combined with Buttons – Default, Hover/Pressed, Selected.</li>
+    </ul>
+
+    <h3 className="text-base font-medium">Color and Theming</h3>
+    <ul className="list-disc pl-6 space-y-1">
+      <li>Use <code>currentColor</code> to inherit text color by default.</li>
+      <li>Use semantic colors for success, warning, destructive states.</li>
+      <li>Rules for duotone or multi-color icons (if supported).</li>
+    </ul>
+
+    <h3 className="text-base font-medium">Constraints</h3>
+    <ul className="list-disc pl-6 space-y-1">
+      <li>Spacing with text, required alignment in inputs/buttons, minimum touch targets.</li>
+      <li>When to pair icons with text vs icon-only and tooltip/ARIA-label requirements.</li>
+      <li>Do/Don't guidelines (e.g., do not use icon-only for critical actions).</li>
+    </ul>
+
+    <h3 className="text-base font-medium">Size and Layout</h3>
+    <ul className="list-disc pl-6 space-y-1">
+      <li>Standard sizes: 16, 20, 24px (dense UI, buttons, navigation, etc.).</li>
+      <li>Use a 24×24 pixel grid with 2px padding.</li>
+      <li>Maintain consistent stroke weight, corner radius, alignment.</li>
+    </ul>
+
+    {/* ------------------------------------------ */}
+    {/* ACCESSIBILITY PRINCIPLE 1: PERCEIVABLE */}
+    {/* ------------------------------------------ */}
+
+    <h2 className="text-lg font-semibold">Accessibility</h2>
+
+    <h3 className="text-base font-semibold">Principle 1: Perceivable</h3>
+
+    <table className="w-full text-sm border-collapse">
+      <thead>
+        <tr className="border-b">
+          <th className="py-2 text-left font-medium">WCAG Success Criterion / ID</th>
+          <th className="py-2 text-left font-medium">Level</th>
+          <th className="py-2 text-left font-medium">Purpose</th>
+          <th className="py-2 text-left font-medium">Target Needs</th>
+          <th className="py-2 text-left font-medium">How to Implement</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {/* 1.1.1 */}
+        <tr className="border-b align-top">
+          <td className="py-2 font-medium">1.1.1 Non-text Content</td>
+          <td className="py-2">A</td>
+          <td className="py-2">To convey meaning of visual or non-text content.</td>
+          <td className="py-2">Code, Sensory, Wording, Cognitive, Visual.</td>
+          <td className="py-2">
+            Provide descriptive text alternatives for icons, charts, controls.
+            Decorative content must use empty alt attributes or <code>aria-hidden</code>.
+          </td>
+        </tr>
+
+        {/* 1.3.1 / 1.3.2 */}
+        <tr className="border-b align-top">
+          <td className="py-2 font-medium">1.3 – Adaptable<br />1.3.1 / 1.3.2</td>
+          <td className="py-2">A</td>
+          <td className="py-2">
+            Ensure information order and structure remain meaningful.
+          </td>
+          <td className="py-2">Cognitive, Visual, Code.</td>
+          <td className="py-2">
+            Use semantic HTML; reading order must match visual order.<br/><br/>
+            <strong>Example:</strong><br/>
+            Back icon → “Back” label → Next icon → “Next” label.
+          </td>
+        </tr>
+
+        {/* 1.3.4 */}
+        <tr className="border-b align-top">
+          <td className="py-2 font-medium">1.3.4 Orientation</td>
+          <td className="py-2">AA</td>
+          <td className="py-2">Content should be usable in portrait or landscape.</td>
+          <td className="py-2">Visual, Cognitive.</td>
+          <td className="py-2">Do not lock orientation unless essential.</td>
+        </tr>
+
+        {/* 1.3.6 */}
+        <tr className="border-b align-top">
+          <td className="py-2 font-medium">1.3.6 Identify Purpose</td>
+          <td className="py-2">AAA</td>
+          <td className="py-2">Help assistive tech understand purpose of regions.</td>
+          <td className="py-2">Visual, Cognitive.</td>
+          <td className="py-2">
+            Use semantic regions, ARIA landmarks.<br/>
+            Example: Primary navigation with icon + label.
+          </td>
+        </tr>
+
+        {/* 1.4 series */}
+        <tr className="border-b align-top">
+          <td className="py-2 font-medium">1.4.1 Use of Color</td>
+          <td className="py-2">A</td>
+          <td className="py-2">Color should not be the only indicator.</td>
+          <td className="py-2">Visual.</td>
+          <td className="py-2">
+            Add icons, labels, underlines, shapes as supporting cues.
+          </td>
+        </tr>
+
+        <tr className="border-b align-top">
+          <td className="py-2 font-medium">1.4.3 Contrast (Minimum)</td>
+          <td className="py-2">AA</td>
+          <td className="py-2">Ensure text/icons are readable for low vision users.</td>
+          <td className="py-2">Visual.</td>
+          <td className="py-2">
+            4.5:1 for normal text/icons, 3:1 for large (24px+ or bold 19px+).
+          </td>
+        </tr>
+
+        <tr className="border-b align-top">
+          <td className="py-2 font-medium">1.4.4 Resize Text</td>
+          <td className="py-2">AA</td>
+          <td className="py-2">Interfaces must remain usable at 200% zoom.</td>
+          <td className="py-2">Visual.</td>
+          <td className="py-2">Content must not break or overflow when zoomed.</td>
+        </tr>
+
+        <tr className="border-b align-top">
+          <td className="py-2 font-medium">1.4.6 Contrast (Enhanced)</td>
+          <td className="py-2">AAA</td>
+          <td className="py-2">Provide strong readability at high contrast levels.</td>
+          <td className="py-2">Visual.</td>
+          <td className="py-2">
+            Icons/text require 7:1 contrast minimum (normal size).
+          </td>
+        </tr>
+
+        <tr className="border-b align-top">
+          <td className="py-2 font-medium">1.4.11 Non-text Contrast</td>
+          <td className="py-2">AA</td>
+          <td className="py-2">Interactive graphics & controls must be visible.</td>
+          <td className="py-2">Visual.</td>
+          <td className="py-2">Minimum 3:1 contrast for icons, graph lines, controls.</td>
+        </tr>
+
+        <tr className="align-top">
+          <td className="py-2 font-medium">1.4.13 Content on Hover or Focus</td>
+          <td className="py-2">AA</td>
+          <td className="py-2">Hover/focus content must remain dismissible and visible.</td>
+          <td className="py-2">Visual, Cognitive.</td>
+          <td className="py-2">
+            Must stay until dismissed; Esc must dismiss; must stay on hover.
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    {/* ------------------------------------------ */}
+    {/* PRINCIPLE 2: OPERABLE */}
+    {/* ------------------------------------------ */}
+
+    <h3 className="text-base font-semibold">Principle 2: Operable</h3>
+
+    <table className="w-full text-sm border-collapse">
+      <thead>
+        <tr className="border-b">
+          <th className="py-2 text-left font-medium">WCAG Success Criterion / ID</th>
+          <th className="py-2 text-left font-medium">Level</th>
+          <th className="py-2 text-left font-medium">Purpose</th>
+          <th className="py-2 text-left font-medium">Target Needs</th>
+          <th className="py-2 text-left font-medium">How to Implement</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        {/* 2.1.1 */}
+        <tr className="border-b align-top">
+          <td className="py-2 font-medium">2.1.1 Keyboard</td>
+          <td className="py-2">A</td>
+          <td className="py-2">Content must be usable without a mouse.</td>
+          <td className="py-2">Keyboard, Motor, Visual.</td>
+          <td className="py-2">
+            All functions must be accessible with keyboard only.
+          </td>
+        </tr>
+
+        {/* 2.1.2 */}
+        <tr className="border-b align-top">
+          <td className="py-2 font-medium">2.1.2 No Keyboard Trap</td>
+          <td className="py-2">A</td>
+          <td className="py-2">Prevent trapping focus inside widgets.</td>
+          <td className="py-2">Keyboard, Cognitive.</td>
+          <td className="py-2">
+            Users must easily tab in/out of components.
+          </td>
+        </tr>
+
+        {/* 2.1.3 */}
+        <tr className="border-b align-top">
+          <td className="py-2 font-medium">2.1.3 Keyboard (No Exception)</td>
+          <td className="py-2">AAA</td>
+          <td className="py-2">All functions must be keyboard operable.</td>
+          <td className="py-2">All.</td>
+          <td className="py-2">Even gesture tasks must have keyboard alternatives.</td>
+        </tr>
+
+        {/* 2.1.4 */}
+        <tr className="border-b align-top">
+          <td className="py-2 font-medium">2.1.4 Character Key Shortcuts</td>
+          <td className="py-2">A</td>
+          <td className="py-2">Prevent accidental activation.</td>
+          <td className="py-2">Keyboard, Motor.</td>
+          <td className="py-2">
+            Shortcuts must be turn-off-able or require modifiers.
+          </td>
+        </tr>
+
+        {/* 2.3.3 */}
+        <tr className="border-b align-top">
+          <td className="py-2 font-medium">2.3.3 Animation from Interaction</td>
+          <td className="py-2">AAA</td>
+          <td className="py-2">Prevent motion sickness.</td>
+          <td className="py-2">Sensory.</td>
+          <td className="py-2">
+            Allow reduced-motion settings to disable hover/tap animations.
+          </td>
+        </tr>
+
+        {/* 2.4.x */}
+        <tr className="border-b align-top">
+          <td className="py-2 font-medium">2.4.7 Focus Visible</td>
+          <td className="py-2">AA</td>
+          <td className="py-2">Show which element is focused.</td>
+          <td className="py-2">Keyboard.</td>
+          <td className="py-2">Provide visible focus outline.</td>
+        </tr>
+
+        <tr className="border-b align-top">
+          <td className="py-2 font-medium">2.4.11 Focus Not Obscured (Minimum)</td>
+          <td className="py-2">AA</td>
+          <td className="py-2">Focus must remain partially visible.</td>
+          <td className="py-2">Keyboard.</td>
+          <td className="py-2">Avoid sticky overlays hiding focused elements.</td>
+        </tr>
+
+        <tr className="border-b align-top">
+          <td className="py-2 font-medium">2.4.12 Focus Not Obscured (Enhanced)</td>
+          <td className="py-2">AAA</td>
+          <td className="py-2">Focused element must be fully visible.</td>
+          <td className="py-2">Keyboard.</td>
+          <td className="py-2">No content may cover the focus target.</td>
+        </tr>
+
+        <tr className="align-top">
+          <td className="py-2 font-medium">2.4.13 Focus Appearance</td>
+          <td className="py-2">AAA</td>
+          <td className="py-2">Enhance focus indicator visibility.</td>
+          <td className="py-2">Keyboard, Visual.</td>
+          <td className="py-2">
+            2px minimum outline, 3:1 contrast against non-focused state.
+          </td>
+        </tr>
+
+        {/* 2.5 series */}
+        <tr className="border-b align-top">
+          <td className="py-2 font-medium">2.5.5 Target Size (Enhanced)</td>
+          <td className="py-2">AAA</td>
+          <td className="py-2">Large, easy-to-hit controls.</td>
+          <td className="py-2">Motor, Visual.</td>
+          <td className="py-2">44×44px minimum target size.</td>
+        </tr>
+
+        <tr className="align-top">
+          <td className="py-2 font-medium">2.5.8 Target Size (Minimum)</td>
+          <td className="py-2">AA</td>
+          <td className="py-2">Minimum touch accessibility.</td>
+          <td className="py-2">Motor.</td>
+          <td className="py-2">24×24px minimum target size.</td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    {/* ------------------------------------------ */}
+    {/* PRINCIPLE 3: UNDERSTANDABLE */}
+    {/* ------------------------------------------ */}
+
+    <h3 className="text-base font-semibold">Principle 3: Understandable</h3>
+
+    <table className="w-full text-sm border-collapse">
+      <thead>
+        <tr className="border-b">
+          <th className="py-2 text-left font-medium">WCAG Success Criterion</th>
+          <th className="py-2 text-left font-medium">Level</th>
+          <th className="py-2 text-left font-medium">Purpose</th>
+          <th className="py-2 text-left font-medium">Target Needs</th>
+          <th className="py-2 text-left font-medium">How to Implement</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr className="border-b align-top">
+          <td className="py-2 font-medium">3.2.1 On Focus</td>
+          <td className="py-2">A</td>
+          <td className="py-2">Avoid unexpected changes when focusing elements.</td>
+          <td className="py-2">Keyboard, Cognitive.</td>
+          <td className="py-2">No auto navigation, popups, or form submission on focus.</td>
+        </tr>
+
+        <tr className="border-b align-top">
+          <td className="py-2 font-medium">3.2.3 Consistent Navigation</td>
+          <td className="py-2">AA</td>
+          <td className="py-2">Navigation must remain predictable.</td>
+          <td className="py-2">Cognitive.</td>
+          <td className="py-2">Menus, links, search must remain in consistent places.</td>
+        </tr>
+
+        <tr className="align-top">
+          <td className="py-2 font-medium">3.2.4 Consistent Identification</td>
+          <td className="py-2">AA</td>
+          <td className="py-2">Controls must be recognized consistently.</td>
+          <td className="py-2">Cognitive.</td>
+          <td className="py-2">
+            Icons with identical functionality must share the same appearance and label.
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    {/* ------------------------------------------ */}
+    {/* PRINCIPLE 4: ROBUST */}
+    {/* ------------------------------------------ */}
+
+    <h3 className="text-base font-semibold">Principle 4: Robust</h3>
+
+    <table className="w-full text-sm border-collapse">
+      <thead>
+        <tr className="border-b">
+          <th className="py-2 text-left font-medium">Criterion</th>
+          <th className="py-2 text-left font-medium">Level</th>
+          <th className="py-2 text-left font-medium">Purpose</th>
+          <th className="py-2 text-left font-medium">Target Needs</th>
+          <th className="py-2 text-left font-medium">Implementation</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr className="align-top">
+          <td className="py-2 font-medium">4.1.2 Name, Role, Value</td>
+          <td className="py-2">A</td>
+          <td className="py-2">Assistive tech must interpret controls correctly.</td>
+          <td className="py-2">Code, Forms, Keyboard, Visual.</td>
+          <td className="py-2">
+            Provide accessible names, proper roles (button, link), and expose states and values.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    {/* ------------------------------------------ */}
+    {/* FUTURE SCALABILITY / NEW ICON CREATION */}
+    {/* ------------------------------------------ */}
+
+    <h2 className="text-lg font-semibold mt-8">Creating and Adding New Icons – Future Scalability</h2>
+
+    <h3 className="text-base font-medium">Process</h3>
+    <ul className="list-disc pl-6 space-y-1">
+      <li>Request creation</li>
+      <li>Design in Figma using the correct grid</li>
+      <li>Review & audit</li>
+      <li>Engineering handoff</li>
+      <li>Release & documentation</li>
+    </ul>
+
+    <h3 className="text-base font-medium">Rules for Composite Icons</h3>
+    <ul className="list-disc pl-6 space-y-1">
+      <li>Reuse existing shapes where possible.</li>
+      <li>Limit number of parts for simplicity.</li>
+      <li>Define consistent badge placement.</li>
+    </ul>
+
+    <h3 className="text-base font-medium">Checklist Before Adding</h3>
+    <ul className="list-disc pl-6 space-y-1">
+      <li>Naming follows conventions.</li>
+      <li>Aligns to pixel grid.</li>
+      <li>Matches visual style & stroke weight.</li>
+      <li>Tested at small sizes.</li>
+    </ul>
+
+    <h3 className="text-base font-medium">Naming and Organization</h3>
+    <ul className="list-disc pl-6 space-y-1">
+      <li>Conventions: <code>category_action-state-size</code> or <code>arrow_left</code>.</li>
+      <li>Categories: actions, navigation, status, media, files, etc.</li>
+      <li>Rules for aliases and deprecations.</li>
+    </ul>
+
+  </div>
+</TabsContent>
+
         </Tabs>
         {/* --- End New Tabs Here --- */}
 
