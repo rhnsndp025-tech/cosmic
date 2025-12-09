@@ -398,27 +398,36 @@ const Icons = () => {
   return (
     <ArticleLayout
       title="Icons"
-      description="Guidelines for using icons consistently across your applications."
+      description="Guidelines for using icons consistently across Qapita applications."
     >
       
-  <div className="mt-4 border-rounded">
+        <p className="text-md leading-relaxed">
+        A scalable library of icons handcrafted by Qapita, designed to represent actions, categories, and concepts with clarity and consistency. Our icons are visually simple, universally recognizable, and aligned with Qapita’s modern, friendly brand principles, supporting intuitive navigation and communication across all platforms.
+        </p>
+  {/* <div className="mt-2 border-rounded">
     <ReactBeforeSliderComponent
       firstImage={FIRST_IMAGE}
       secondImage={SECOND_IMAGE}
     />
-  </div>
-      <section className="space-y-6 mt-10" >
-        <p className="text-lg leading-relaxed">
-          Icons are a crucial part of visual communication. ink uses a carefully curated
-          icon library that maintains consistency across all components.
+  </div> */}
+
+  <img src="/assets/figma-icon.png" className="mt-10 border-radius-10"  />
+
+        <p className="text-md leading-relaxed mt-10">
+
+One of our values is to create a distinct Qapita personality that is strong and consistent. Iconography is a powerful visual cue to the user and should reflect our particular sense of style.
         </p>
+
+
+      <section className="space-y-6 mt-10" >
+      
 
 
  {/* --- Start New Tabs Here --- */}
         <Tabs defaultValue="overview" className="mt-8">
           <TabsList className="grid w-full grid-cols-4">
             <TabsTrigger value="overview">Overview</TabsTrigger>
-            <TabsTrigger value="types">Types</TabsTrigger>
+            <TabsTrigger value="Guidance">Guidance</TabsTrigger>
             <TabsTrigger value="usage">Usage</TabsTrigger>
             <TabsTrigger value="accessibility">Accessibility</TabsTrigger>
           </TabsList>
@@ -437,12 +446,14 @@ const Icons = () => {
 
 
           </TabsContent>
-          <TabsContent value="types">
+          <TabsContent value="Guidance">
             <p className="text-muted-foreground mt-4">
 
 {/* <img src="/assets/grid-demo.png" style={{ width: '100%', height: '100%', objectFit: 'contain' }} /> */}
               We primarily use Lucide icons for their extensive library and consistent design language. For specialized needs, we also maintain a custom SVG icon set.
             </p>
+
+            <IconGridDocumentation />
 {/* 
   <div className="mt-4">
     <ReactBeforeSliderComponent
@@ -890,5 +901,205 @@ const Icons = () => {
     </ArticleLayout>
   );
 };
+
+
+ function IconGridDocumentation() {
+  return (
+    <div className="space-y-16">
+
+      {/* ------------------------------------------- */}
+      {/* SECTION: Icon Grid Structure */}
+      {/* ------------------------------------------- */}
+      <section>
+        <h2 className="text-xl font-semibold mb-6">
+          Icon Grid Structure — Circle, Square, Rectangle
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+          {/* Square Icon Example */}
+          <div className="space-y-4">
+            <div className="w-full h-48 bg-gray-100 rounded-md flex items-center justify-center">
+              {/* Replace with image */}
+              <span className="text-gray-400">
+                <img src="/assets/ico-ano-01.png" />
+                </span>
+            </div>
+            <p className="text-sm text-muted-foreground">
+              Square height and width: 22px
+            </p>
+          </div>
+
+          {/* Icon drawn using square keyline */}
+          <div className="space-y-4">
+            <div className="w-full h-48 bg-gray-100 rounded-md flex items-center justify-center">
+              <span className="text-gray-400">                <img src="/assets/ico-ano-02.png" />
+</span>
+            </div>
+            <p className="text-sm text-muted-foreground">
+              Icon drawn using square keyline
+            </p>
+          </div>
+
+          {/* Circle Keyline */}
+          <div className="space-y-4">
+            <div className="w-full h-48 bg-gray-100 rounded-md flex items-center justify-center">
+              <span className="text-gray-400"><img src="/assets/ico-ano-03.png" /></span>
+            </div>
+            <p className="text-sm text-muted-foreground">
+              Circle diameter: 22px
+            </p>
+          </div>
+
+          {/* Icon using circle keyline */}
+          <div className="space-y-4">
+            <div className="w-full h-48 bg-gray-100 rounded-md flex items-center justify-center">
+              <span className="text-gray-400"><img src="/assets/ico-ano-04.png" /></span>
+            </div>
+            <p className="text-sm text-muted-foreground">
+              Icon drawn using circle keyline
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ------------------------------------------- */}
+      {/* SECTION: Live Area / Padding */}
+      {/* ------------------------------------------- */}
+      <section>
+        <h2 className="text-xl font-semibold mb-6">Padding / Spacing</h2>
+        <p className="text-muted-foreground max-w-2xl mb-8">
+          Icon content should remain inside the live area, ensuring it stays
+          visible and avoids clipping. Additional weight may extend into padding,
+          but no part of the icon should enter outside the trim area.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+          {/* Live Area */}
+          <div className="space-y-4">
+            <div className="w-full h-48 bg-gray-50 rounded-md flex items-center justify-center">
+              <span className="text-gray-400">[ Live Area Image ]</span>
+            </div>
+            <p className="text-sm text-muted-foreground">Live area</p>
+          </div>
+
+          {/* Padding */}
+          <div className="space-y-4">
+            <div className="w-full h-48 bg-gray-50 rounded-md flex items-center justify-center">
+              <span className="text-gray-400">[ Padding Image ]</span>
+            </div>
+            <p className="text-sm text-muted-foreground">Padding</p>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ------------------------------------------- */}
+      {/* SECTION: Pixel Alignment */}
+      {/* ------------------------------------------- */}
+      <section>
+        <h2 className="text-xl font-semibold mb-6">Pixel Alignment</h2>
+        <p className="text-muted-foreground max-w-2xl mb-8">
+          Icons are displayed on a 24px × 24px grid. For pixel-perfect accuracy,
+          review icons at 100% scale to ensure clean alignment.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+          <div className="space-y-4">
+            <div className="w-full h-48 bg-gray-50 rounded flex items-center justify-center">
+              <span className="text-gray-400">[ 24px Grid (100%) ]</span>
+            </div>
+            <p className="text-sm text-muted-foreground">24px grid at 100% scale</p>
+          </div>
+
+          <div className="space-y-4">
+            <div className="w-full h-48 bg-gray-50 rounded flex items-center justify-center">
+              <span className="text-gray-400">[ 24×24 Grid ]</span>
+            </div>
+            <p className="text-sm text-muted-foreground">24×24 grid at 100% scale</p>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ------------------------------------------- */}
+      {/* SECTION: Icon Sizes */}
+      {/* ------------------------------------------- */}
+      <section>
+        <h2 className="text-xl font-semibold mb-6">Icon Sizes</h2>
+
+        <p className="text-muted-foreground mb-6">
+          Icons appear at additional sizes: 12px, 16px, 20px, 24px, 32px, 40px,
+          and 48px, with 24px preferred for desktop UIs. Larger sizes are used
+          for mobile or display contexts.
+        </p>
+
+        <div className="flex flex-wrap items-center gap-8">
+          {["12", "16", "20", "24", "32", "40", "48"].map((size) => (
+            <div key={size} className="flex flex-col items-center">
+              <div
+                className="bg-gray-100 rounded-md flex items-center justify-center mb-2"
+                style={{ width: `${size}px`, height: `${size}px` }}
+              >
+                <span className="text-gray-400 text-xs">[{size}px]</span>
+              </div>
+              <span className="text-sm text-muted-foreground">{size}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ------------------------------------------- */}
+      {/* SECTION: Corner Radius */}
+      {/* ------------------------------------------- */}
+      <section>
+        <h2 className="text-xl font-semibold mb-6">Corner Radius</h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+          {/* Instructions */}
+          <div className="space-y-4">
+            <div className="w-full h-56 bg-gray-50 rounded-md flex items-center justify-center">
+              <span className="text-gray-400">[ Corner Radius Diagram ]</span>
+            </div>
+            <ul className="list-decimal pl-6 text-muted-foreground space-y-1 text-sm">
+              <li>Use a 1–12px corner radius depending on icon size.</li>
+              <li>Use round line caps for stroke ends.</li>
+              <li>Use a consistent stroke for inner and outer details.</li>
+            </ul>
+          </div>
+
+          {/* Size-specific radius */}
+          <div className="space-y-6">
+            {[
+              { size: "12×12", stroke: 1, radius: 2 },
+              { size: "16×16", stroke: 1, radius: 2 },
+              { size: "20×20", stroke: 1.5, radius: 4 },
+              { size: "24×24", stroke: 1.5, radius: 6 },
+              { size: "32×32", stroke: 2, radius: 8 },
+              { size: "40×40", stroke: 2.5, radius: 10 },
+              { size: "48×48", stroke: 2.5, radius: 12 },
+            ].map((item) => (
+              <div key={item.size} className="space-y-3">
+                <h4 className="font-medium text-sm">Icon Size – {item.size}</h4>
+                <div className="w-full h-40 bg-gray-50 rounded flex items-center justify-center">
+                  <span className="text-gray-400">
+                    [ Stroke {item.stroke}px • Radius {item.radius}px ]
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  );
+}
+
 
 export default Icons;
